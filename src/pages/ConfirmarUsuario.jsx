@@ -33,7 +33,7 @@ const ConfirmarUsuario = () => {
                 <div className="w-full p-3 flex flex-col gap-3">
                     {spinner ? (
                         <>
-                            <p className="text-center text-white bg-red-500 p-3  rounded-2xl"><i class="fa-regular fa-key fa-flip"></i> Verificando token</p>
+                            <p className="text-center text-white bg-red-500 p-3  rounded-2xl"><i className="fa-regular fa-key fa-flip"></i> Verificando token</p>
                         </>
                     ) :
                     (
