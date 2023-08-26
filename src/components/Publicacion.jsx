@@ -2,7 +2,6 @@ import React from 'react'
 
 const Publicacion = ({publicacion}) => {
 
-    console.log(publicacion)
     const { favorito,contenido,creador } = publicacion;
 
   return (
@@ -15,7 +14,7 @@ const Publicacion = ({publicacion}) => {
                 </div>
             </div>
 
-            <p className='py-3'>{contenido}</p>
+            <p className='resize-none py-4'>{contenido}</p>
 
             <div className='flex gap-2'>
                 <i className="fa-regular fa-comment cursor-pointer "></i>

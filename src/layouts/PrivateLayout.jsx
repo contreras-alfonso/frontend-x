@@ -7,7 +7,7 @@ const PrivateLayout = () => {
   return (
     <>
         <Header></Header>
-        <main className="bg-white h-screen mt-5 mb-96">
+        <main className="bg-white mt-5 mb-96">
             <Outlet></Outlet>
         </main>
         <Footer></Footer>

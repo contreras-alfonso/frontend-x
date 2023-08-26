@@ -3,9 +3,11 @@ import { useState } from "react"
 import { validarEmail } from "../helpers/helpers";
 import ModalMensaje from "../components/ModalMensaje";
 import { registrarUsuario } from "../api/usuarios/usuarios";
+import Spinner from "../components/Spinner";
 
 const Register = () => {
 
+    const [spinner,setSpinner] = useState(false);
     const [nombre,setNombre] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -31,7 +33,9 @@ const Register = () => {
             return;
         }
 
+        setSpinner(true);
         const data = await registrarUsuario({nombre,email,password});
+        setSpinner(false);
 
         if(!data.status){
             setModalMensaje(true);
@@ -72,7 +76,7 @@ const Register = () => {
             </div>
         </div>
         {modalMensaje && <ModalMensaje modalMensaje={modalMensaje} setModalMensaje={setModalMensaje} alerta={alerta}/> }
-       
+        {spinner && <Spinner></Spinner>}
     </>
   )
 }

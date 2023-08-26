@@ -2,8 +2,10 @@ import { Link,useNavigate } from "react-router-dom"
 import { useState } from "react";
 import ModalMensaje from "../components/ModalMensaje";
 import { iniciarSesion } from "../api/usuarios/usuarios";
+import Spinner from "../components/Spinner";
 
 const Login = () => {
+    const [spinner,setSpinner] = useState(false);
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [modalMensaje,setModalMensaje] = useState(false);
@@ -16,7 +18,11 @@ const Login = () => {
             setModalMensaje(true);
             return setAlerta('Todos los campos son obligatorios');
         }
+
+        setSpinner(true);
         const data = await iniciarSesion({email,password});
+        setSpinner(false);
+
         if(!data.status){
             setModalMensaje(true);
             return setAlerta(data.msg);
@@ -52,6 +58,7 @@ const Login = () => {
         </div>
 
         <ModalMensaje modalMensaje={modalMensaje} setModalMensaje={setModalMensaje} alerta={alerta}/>
+        {spinner && <Spinner></Spinner>}
     </>
   )
 }

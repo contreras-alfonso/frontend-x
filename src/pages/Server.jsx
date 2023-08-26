@@ -6,7 +6,6 @@ const Server = () => {
     useEffect(()=>{
         const activarServidor = async () => {
             const data = await activarServer();
-            console.log(data);
             setMsg(data);
         }
         activarServidor();
