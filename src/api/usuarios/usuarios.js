@@ -75,6 +75,17 @@ const verificarSesionValida = async () => {
     return await response.json()
 }
 
+const activarServer = async () => {
+    const url = `${backendRuta}/`;
+    const response = await fetch(url,{
+        method:'GET',
+        headers:{
+            'Content-Type': 'application/json',
+        }
+    })
+    return await response.json()
+}
+
 export{
     registrarUsuario,
     recuperarCuenta,
@@ -83,4 +94,5 @@ export{
     cambiarPasswordPorOlvido,
     iniciarSesion,
     verificarSesionValida,
+    activarServer,
 }

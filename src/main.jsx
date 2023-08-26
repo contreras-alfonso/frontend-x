@@ -10,6 +10,7 @@ import ConfirmarUsuario from './pages/ConfirmarUsuario'
 import ActualizarPassword from './pages/ActualizarPassword'
 import Home from './pages/Home'
 import PrivateLayout from './layouts/PrivateLayout'
+import Server from './pages/Server'
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       {
         path:'actualizar-password/:token',
         element:<ActualizarPassword></ActualizarPassword>
-      }
+      },
     ]
   },
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         element:<Home></Home>
       },
     ]
+  },
+  {
+    path:'/server',
+    element: <Server></Server>,
   }
 ])
 
