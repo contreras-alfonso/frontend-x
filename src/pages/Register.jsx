@@ -51,7 +51,7 @@ const Register = () => {
     <>  
         <div className="flex max-md:flex-col max-md:justify-between items-center w-full md:px-20 2xl:px-80 mx-auto">
             <div className="md:w-1/2 px-3 space-y-3">
-                <h1 className="font-black text-6xl">Dev X</h1>
+                <h1 className="font-black text-6xl">Dev X <span className="text-base font-semibold">By Lino</span></h1>
                 <p className="text-xl max-md:text-lg">Registrate y publica lo que piensas.</p>
             </div>
             <div className="w-full px-3">

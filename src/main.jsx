@@ -8,6 +8,8 @@ import Register from './pages/Register'
 import ResetPassword from './pages/ResetPassword'
 import ConfirmarUsuario from './pages/ConfirmarUsuario'
 import ActualizarPassword from './pages/ActualizarPassword'
+import Home from './pages/Home'
+import PrivateLayout from './layouts/PrivateLayout'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,16 @@ const router = createBrowserRouter([
         path:'actualizar-password/:token',
         element:<ActualizarPassword></ActualizarPassword>
       }
+    ]
+  },
+  {
+    path:'/home',
+    element: <PrivateLayout></PrivateLayout>,
+    children:[
+      {
+        index:true,
+        element:<Home></Home>
+      },
     ]
   }
 ])

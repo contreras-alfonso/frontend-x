@@ -52,10 +52,35 @@ const cambiarPasswordPorOlvido = async (objUser,token) => {
     return await response.json()
 }
 
+const iniciarSesion = async (objUser) => {
+    const url = `${backendRuta}/usuarios/iniciar-sesion`;
+    const response = await fetch(url,{
+        method:'POST',
+        body: JSON.stringify(objUser),
+        headers,
+    })
+    return await response.json()
+}
+
+const verificarSesionValida = async () => {
+    const url = `${backendRuta}/usuarios/perfil`;
+    const token = localStorage.getItem('token')
+    const response = await fetch(url,{
+        method:'GET',
+        headers:{
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer '+token,
+        }
+    })
+    return await response.json()
+}
+
 export{
     registrarUsuario,
     recuperarCuenta,
     confirmarUsuario,
     confirmarTokenCambiarPassword,
     cambiarPasswordPorOlvido,
+    iniciarSesion,
+    verificarSesionValida,
 }
