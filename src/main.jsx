@@ -22,19 +22,19 @@ const router = createBrowserRouter([
         element:<Login></Login>
       },
       {
-        path:'register',
+        path:'/register',
         element:<Register></Register>
       },
       {
-        path:'reset-password',
+        path:'/reset-password',
         element:<ResetPassword></ResetPassword>
       },
       {
-        path:'confirmar-cuenta/:token',
+        path:'/confirmar-cuenta/:token',
         element:<ConfirmarUsuario></ConfirmarUsuario>
       },
       {
-        path:'actualizar-password/:token',
+        path:'/actualizar-password/:token',
         element:<ActualizarPassword></ActualizarPassword>
       },
     ]
