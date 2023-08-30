@@ -1,10 +1,13 @@
 import { Link,useNavigate } from "react-router-dom"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalMensaje from "../components/ModalMensaje";
 import { iniciarSesion } from "../api/usuarios/usuarios";
+import useAuth from "../hooks/useAuth";
 import Spinner from "../components/Spinner";
 
 const Login = () => {
+
+    const {user,setUser} = useAuth();
     const [spinner,setSpinner] = useState(false);
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -27,10 +30,17 @@ const Login = () => {
             setModalMensaje(true);
             return setAlerta(data.msg);
         }
-        
+
+        setUser({
+            _id:data.id,
+            nombre:data.nombre,
+            email:data.email,
+        });
         localStorage.setItem('token',data.jwt)
-        navigate('/home')
+         navigate('/home')
     }
+
+
 
   return (
     <>  
