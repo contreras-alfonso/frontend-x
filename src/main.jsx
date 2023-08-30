@@ -15,7 +15,7 @@ import Server from './pages/Server'
 import { AuthProvider } from './context/AuthProvider'
 import { PublicacionesProvider } from './context/PublicacionesProvider'
 import { Toast } from './pages/Toast';
-import { HelperProvider } from './context/helperProvider';
+import { HelperProvider } from './context/HelperProvider';
 
 
 const router = createBrowserRouter([
@@ -64,12 +64,14 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelperProvider>
+
       <AuthProvider>
+        <HelperProvider>
         <PublicacionesProvider>
           <RouterProvider router={router}/>
         </PublicacionesProvider>
+        </HelperProvider>
       </AuthProvider>
-    </HelperProvider>
+
   </React.StrictMode>,
 )
